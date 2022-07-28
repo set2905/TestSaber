@@ -11,11 +11,11 @@ namespace SaberTest
         public ListRandom savedList = new ListRandom();
 
 
-        public bool LoadSaveDataFromDisk()
+        public bool LoadSaveDataFromDisk(string fName)
         {
             Stream s;
 
-            if (FileManager.GetReadStream(saveFilename, out s))
+            if (FileManager.GetReadStream(fName, out s))
             {
                 savedList.Deserialize(s);
                 return true;
@@ -27,16 +27,17 @@ namespace SaberTest
         public void SaveDataToDisk()
         {
             Stream s;
-            // if (FileManager.MoveFile(saveFilename, backupSaveFilename))
-            // {
-            string fullPath = AppDomain.CurrentDomain.BaseDirectory + '/' + saveFilename;
-            if (FileManager.GetWriteStream(fullPath, out s))
+            //DeleteSaveData();
+            if (FileManager.MoveFile(saveFilename, backupSaveFilename))
+            {
+                string fullPath = AppDomain.CurrentDomain.BaseDirectory + '/' + saveFilename;
+                if (FileManager.GetWriteStream(fullPath, out s))
                 {
                     savedList.Serialize(s);
-                    Console.WriteLine("Save successful " + fullPath);
+                    Console.WriteLine("Save to disk successful!");
                 }
-                else Console.WriteLine("Save Unsuccessful! " + fullPath);
-           // }
+                else Console.WriteLine("Save to disk Unsuccessful! ");
+            }
         }
 
         public void DeleteSaveData()
@@ -49,14 +50,6 @@ namespace SaberTest
             {
                 Console.WriteLine("Failed to delete save file!");
             }
-        }
-
-        public void SaveAll()
-        {
-            /*
-            SaveWagons();
-            int lastUnlocked = AllLevels.GetLastUnlockedIndex();
-            SaveLevelIndex(lastUnlocked, AllLevels.GetLastCompletedIndex());*/
         }
     }
 }

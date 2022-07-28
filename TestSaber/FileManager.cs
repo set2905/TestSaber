@@ -5,9 +5,6 @@ namespace SaberTest
     {
         public static bool GetWriteStream(string fullPath, out Stream writeStream)
         {
-
-          
-
             try
             {
 
@@ -77,7 +74,7 @@ namespace SaberTest
 
                 if (!File.Exists(fullPath))
                 {
-                    return false;
+                    File.WriteAllText(fullPath, "");
                 }
 
                 File.Move(fullPath, newFullPath);
