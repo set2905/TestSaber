@@ -27,7 +27,6 @@ namespace SaberTest
         public void SaveDataToDisk()
         {
             Stream s;
-            //DeleteSaveData();
             if (FileManager.MoveFile(saveFilename, backupSaveFilename))
             {
                 string fullPath = AppDomain.CurrentDomain.BaseDirectory + '/' + saveFilename;

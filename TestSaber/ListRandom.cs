@@ -93,7 +93,6 @@ namespace SaberTest
         }
         public void Serialize(Stream s)
         {
-            //byte[] byteArray = Encoding.ASCII.GetBytes(this.ToString().ToCharArray());
             StreamWriter writer = new StreamWriter(s);
             Console.WriteLine("Writing: " + this.ToString());
             writer.WriteLine(this.ToString());
