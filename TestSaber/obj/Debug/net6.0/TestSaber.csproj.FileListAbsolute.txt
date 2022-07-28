@@ -1,0 +1,15 @@
+E:\Repa\TestSaber\TestSaber\TestSaber\bin\Debug\net6.0\TestSaber.exe
+E:\Repa\TestSaber\TestSaber\TestSaber\bin\Debug\net6.0\TestSaber.deps.json
+E:\Repa\TestSaber\TestSaber\TestSaber\bin\Debug\net6.0\TestSaber.runtimeconfig.json
+E:\Repa\TestSaber\TestSaber\TestSaber\bin\Debug\net6.0\TestSaber.dll
+E:\Repa\TestSaber\TestSaber\TestSaber\bin\Debug\net6.0\ref\TestSaber.dll
+E:\Repa\TestSaber\TestSaber\TestSaber\bin\Debug\net6.0\TestSaber.pdb
+E:\Repa\TestSaber\TestSaber\TestSaber\obj\Debug\net6.0\TestSaber.GeneratedMSBuildEditorConfig.editorconfig
+E:\Repa\TestSaber\TestSaber\TestSaber\obj\Debug\net6.0\TestSaber.AssemblyInfoInputs.cache
+E:\Repa\TestSaber\TestSaber\TestSaber\obj\Debug\net6.0\TestSaber.AssemblyInfo.cs
+E:\Repa\TestSaber\TestSaber\TestSaber\obj\Debug\net6.0\TestSaber.csproj.CoreCompileInputs.cache
+E:\Repa\TestSaber\TestSaber\TestSaber\obj\Debug\net6.0\TestSaber.dll
+E:\Repa\TestSaber\TestSaber\TestSaber\obj\Debug\net6.0\ref\TestSaber.dll
+E:\Repa\TestSaber\TestSaber\TestSaber\obj\Debug\net6.0\TestSaber.pdb
+E:\Repa\TestSaber\TestSaber\TestSaber\obj\Debug\net6.0\TestSaber.genruntimeconfig.cache
+E:\Repa\TestSaber\TestSaber\TestSaber\obj\Debug\net6.0\TestSaber.csproj.AssemblyReference.cache
