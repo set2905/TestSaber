@@ -29,9 +29,8 @@ namespace SaberTest
 
         public ListRandom()
         {
+
         }
-
-
 
         /// <summary>
         /// Конвертация из Списка строк с разделителями полей в ListRandom
@@ -67,6 +66,7 @@ namespace SaberTest
             }
             return convertedToStringList;
         }
+
         /// <summary>
         /// Преобразование в одну строку. При этом объект сначала преобразуется в список строк, каждая из которых отвечает за объект ListNode.
         /// После чего происходит конкатенация списка строк с разделителем объектов.
@@ -115,6 +115,7 @@ namespace SaberTest
             }
             return -1;
         }
+
         public void Clear()
         {
             ListNode current = Head;
@@ -149,12 +150,11 @@ namespace SaberTest
             Console.WriteLine(this);
         }
 
-
-
         IEnumerator IEnumerable.GetEnumerator()
         {
             return (IEnumerator)GetEnumerator();
         }
+
         public ListRandomEnum GetEnumerator()
         {
             return new ListRandomEnum(this);

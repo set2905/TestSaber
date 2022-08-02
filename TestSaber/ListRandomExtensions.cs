@@ -28,7 +28,12 @@ namespace TestSaber
             AssignIndexesOfRandom(to, randomIndexes);
 
         }
-
+        /// <summary>
+        /// Присваивает указанные индексы рандомных элементов каждому ноду из списка ListRandom
+        /// </summary>
+        /// <param name="list"></param>
+        /// <param name="randomIndexes"></param>
+        /// <returns></returns>
         public static bool AssignIndexesOfRandom(this ListRandom list, List<int> randomIndexes)
         {
             if (randomIndexes.Count != list.Count)

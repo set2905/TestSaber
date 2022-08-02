@@ -12,9 +12,6 @@ for (int i = 0; i <= 5; i++)
 saveSys.savedList.Shuffle();
 
 
-
-
-
 saveSys.SaveDataToDisk();
 saveSys.savedList = new ListRandom();
 Console.WriteLine("\nThe following data has been read from disk: ");

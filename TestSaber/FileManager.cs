@@ -7,7 +7,6 @@ namespace SaberTest
         {
             try
             {
-
                 Console.WriteLine("Writing file at " + fullPath);
                 writeStream = new FileInfo(fullPath).OpenWrite();
                 return true;
