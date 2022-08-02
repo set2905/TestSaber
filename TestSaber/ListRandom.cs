@@ -14,6 +14,22 @@ namespace SaberTest
         public ListNode? Tail;
         public int Count;
 
+        public ListNode? this[int index]
+        {
+            get
+            {
+                if (index >= Count || index < 0) throw new IndexOutOfRangeException();
+                int currentIndex = 0;
+                ListNode currentNode = Head;
+                while (index != currentIndex)
+                {
+                    currentNode = GetNext(currentNode);
+                    currentIndex++;
+                }
+                return currentNode;
+            }
+        }
+
         public ListRandom()
         {
         }
@@ -108,7 +124,7 @@ namespace SaberTest
             List<string> readList = readString.Split(separator).ToList();
 
             ListRandom readListRandom = readList;
-            
+
             Console.WriteLine(readListRandom);
             Clear();
             foreach (string nodeData in readList)

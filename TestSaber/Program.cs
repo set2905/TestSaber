@@ -18,7 +18,7 @@ foreach (string data in (List<string>)saveSys.savedList)
     Console.WriteLine(data);
 }
 
-Console.WriteLine("\nLoaded class objects each node relations: ");
+Console.WriteLine("\nLoaded class objects with each node relations: ");
 foreach (ListNode node in (List<ListNode>)saveSys.savedList)
 {
     string prev;
@@ -32,6 +32,8 @@ foreach (ListNode node in (List<ListNode>)saveSys.savedList)
 
     Console.WriteLine(prev + " << " + node.Data + " >> " + next);
 }
+
+
 Console.WriteLine("\nThe following BACKUP data has been read from disk: ");
 saveSys.LoadSaveDataFromDisk(saveSys.backupSaveFilename);
 Console.ReadLine();
