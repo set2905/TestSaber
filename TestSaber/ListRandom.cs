@@ -30,31 +30,48 @@ namespace SaberTest
         public ListRandom()
         {
         }
+
+
+
+        /// <summary>
+        /// Конвертация из Списка строк с разделителями полей в ListRandom
+        /// </summary>
         public static implicit operator ListRandom(List<string> objects)
         {
             ListRandom newList = new ListRandom();
+            List<int> randomIndexes = new List<int>();
             foreach (string content in objects)
             {
                 string[] fields = content.Split(fieldSeparator);
-                newList.Add(new ListNode(content));
+                ListNode added = new ListNode(fields[0]);
+                newList.Add(added);
+                randomIndexes.Add(Int32.Parse(fields[1]));
             }
+            newList.AssignIndexesOfRandom(randomIndexes);
             return newList;
         }
 
+        /// <summary>
+        /// Конвертация из ListRandom в список строк с разделителями полей. 
+        /// Каждая строка соответствует объекту класса ListNode (Дата, разделитель, индекс случайного)
+        /// </summary>
         public static explicit operator List<string>(ListRandom listRandom)
         {
             List<string> convertedToStringList = new List<string>();
             ListNode current = listRandom.Head;
             while (current != null)
             {
-                convertedToStringList.Add(current.Data + fieldSeparator + listRandom.IndexOf(current));
+                int indexOfCurrentRandom = listRandom.IndexOf(current.Random);
+                convertedToStringList.Add(current.Data + fieldSeparator + indexOfCurrentRandom);
                 current = listRandom.GetNext(current);
             }
             return convertedToStringList;
         }
-
-
-
+        /// <summary>
+        /// Преобразование в одну строку. При этом объект сначала преобразуется в список строк, каждая из которых отвечает за объект ListNode.
+        /// После чего происходит конкатенация списка строк с разделителем объектов.
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             string converted = String.Join(objSeparator, (List<string>)this);
@@ -81,7 +98,7 @@ namespace SaberTest
 
             Tail = addedNode;
             Count++;
-            this.Shuffle();
+            
 
             return Count;
 
@@ -111,9 +128,11 @@ namespace SaberTest
 
         public void Serialize(Stream s)
         {
+            
             StreamWriter writer = new StreamWriter(s);
-            Console.WriteLine("Writing: " + this.ToString());
-            writer.WriteLine(this.ToString());
+            string stringToWrite = this.ToString();
+            Console.WriteLine("Writing: " + stringToWrite);
+            writer.WriteLine(stringToWrite);
             writer.Close();
         }
 
@@ -126,22 +145,11 @@ namespace SaberTest
             List<string> objects = readString.Split(objSeparator).ToList();
 
             ListRandom readListRandom = objects;
-
-
-
-            Console.WriteLine(readListRandom);
-            Clear();
-            foreach (string nodeData in objects)
-            {
-                Add(new ListNode(nodeData));
-            }
-
-            foreach (ListNode node in this)
-            {
-                node.Random = this[0];
-            }
-
+            readListRandom.CopyTo(this);
+            Console.WriteLine(this);
         }
+
+
 
         IEnumerator IEnumerable.GetEnumerator()
         {
