@@ -17,11 +17,5 @@ namespace SaberTest
         {
             this.Data = Data;
         }
-        public ListNode(ListNode Previous, ListNode Next, string Data)
-        {
-            this.Previous = Previous;
-            this.Next = Next;
-            this.Data = Data;
-        }
     }
 }
