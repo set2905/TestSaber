@@ -38,7 +38,7 @@ namespace TestSaber
 
             for (int i = 0; i <= list.Count - 1; i++)
             {
-                if (randomIndexes[i] > 0)
+                if (randomIndexes[i] >= 0)
                     list[i].Random = list[randomIndexes[i]];
                 else list[i].Random = null;
             }
